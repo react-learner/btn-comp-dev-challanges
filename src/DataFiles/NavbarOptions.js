@@ -11,6 +11,7 @@ export const NavbarOptions = [
   },{
     id: 4,
     name: "Buttons",
+    style:'bold'
   },{
     id: 5,
     name: "Inputs",
