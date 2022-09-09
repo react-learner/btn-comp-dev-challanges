@@ -34,18 +34,6 @@ const ButtonsContainer = () => {
     boxShadow: shadow === true ? shadowStyle : "0 0 0 0 #fff",
     padding: `${size}px ${size * 2}px`,
   };
-  const defaultHoverStyle = {
-    backgroundColor:
-      color === "default"
-        ? "#aeaeae"
-        : color === "primary"
-        ? "#0039CB"
-        : color === "secondary"
-        ? "#1c313a"
-        : color === "danger"
-        ? "#9a0007"
-        : "#e0e0e0",
-  };
   const outlineStyle = {
     borderRadius: "0.6rem",
     border: "0.2rem solid",
@@ -105,18 +93,16 @@ const ButtonsContainer = () => {
     setShadow(!shadow);
   };
   const sizeHandler = (e) => {
-    // const number =
     setSize(e.target.value);
   };
   const iconDisplayHandler = (e) => {
     setIconDisplay(e.target.value);
-    console.log(e.target.value)
+    console.log(e.target.value);
   };
   const iconHandler = (e) => {
-      const result = e.target.value
-      
+    const result = e.target.value;
+
     setIcon(result.toString());
-    
   };
 
   return (
@@ -133,12 +119,20 @@ const ButtonsContainer = () => {
               : textStyle
           }
         >
-          <MdShoppingCart style={{display: iconDisplay==='true' && icon === "left" ? "" : "none" }} />
+          <MdShoppingCart
+            style={{
+              display: iconDisplay === "true" && icon === "left" ? "" : "none",
+            }}
+          />
           Default
-          <MdShoppingCart style={{display: iconDisplay==='true' && icon === "right" ? "" : "none" }} />
+          <MdShoppingCart
+            style={{
+              display: iconDisplay === "true" && icon === "right" ? "" : "none",
+            }}
+          />
         </button>
-        <div className="styles_container" >
-          <div className='styles' >
+        <div className="styles_container">
+          <div className="styles">
             <label htmlFor="buttons">Choose your Button style:</label>
             <select onChange={styleHandler} name="buttons" id="buttons">
               <option value="default">Default</option>
@@ -146,7 +140,7 @@ const ButtonsContainer = () => {
               <option value="text">Text</option>
             </select>
           </div>
-          <div className='styles' >
+          <div className="styles">
             <label htmlFor="colors">Choose your Button color:</label>
             <select onChange={colorHandler} name="colors" id="colors">
               <option value="default">Default</option>
@@ -156,7 +150,7 @@ const ButtonsContainer = () => {
               <option value="disable">Disable</option>
             </select>
           </div>
-          <div className='styles' >
+          <div className="styles">
             <label htmlFor="size">Choose your Button size:</label>
             <select onChange={sizeHandler} name="size" id="size">
               <option value="8">Medium</option>
@@ -164,7 +158,7 @@ const ButtonsContainer = () => {
               <option value="11">Large</option>
             </select>
           </div>
-          <div className='styles' >
+          <div className="styles">
             <label htmlFor="iconDisplay">Display Icon:</label>
             <select
               onChange={iconDisplayHandler}
@@ -176,21 +170,21 @@ const ButtonsContainer = () => {
             </select>
           </div>
           {iconDisplay ? (
-            <div className='styles' >
+            <div className="styles">
               <label htmlFor="icon">Choose your Icon Position:</label>
               <select onChange={iconHandler} name="icon" id="icon">
-              <option value="left">Left</option>
+                <option value="left">Left</option>
                 <option value="right">Right</option>
               </select>
             </div>
           ) : (
             ""
           )}
-          <div className='styles' >
+          <div className="styles">
             <label htmlFor="shadow">Shadow:</label>
             <select onChange={shadowHandler} name="shadow" id="shadow">
-            <option value="false">False</option>
-            <option value="true">True</option>
+              <option value="false">False</option>
+              <option value="true">True</option>
             </select>
           </div>
         </div>
