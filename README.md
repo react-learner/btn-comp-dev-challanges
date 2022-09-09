@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://btn-comp-dev-challanges.vercel.app/">
+    <a href="suhash-btn-challanges.vercel.app">
       Demo
     </a>
     <span> | </span>
